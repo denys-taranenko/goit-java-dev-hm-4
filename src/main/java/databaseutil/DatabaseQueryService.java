@@ -21,11 +21,12 @@ public class DatabaseQueryService {
         try (Statement st = Database.getInstance().getConnection().createStatement()) {
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                workers.add(Worker.builder().ID(rs.getInt("ID"))
+                workers.add(Worker.builder().id(rs.getInt("ID"))
                         .name(rs.getString("NAME"))
                         .birthday(LocalDate.parse(rs.getString("BIRTHDAY")))
                         .level(rs.getString("LEVEL"))
                         .salary(rs.getInt("SALARY")).build());
+                st.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -43,10 +44,11 @@ public class DatabaseQueryService {
         try (Statement st = Database.getInstance().getConnection().createStatement()) {
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                projectWithDurations.add(ProjectWithDuration.builder().ID(rs.getInt("ID"))
+                projectWithDurations.add(ProjectWithDuration.builder().id(rs.getInt("ID"))
                         .startDate(LocalDate.parse(rs.getString("START_DATE")))
                         .finishDate(LocalDate.parse(rs.getString("FINISH_DATE")))
                         .durMonths(rs.getInt("DURATION_MONTHS")).build());
+                st.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -64,9 +66,10 @@ public class DatabaseQueryService {
         try (Statement st = Database.getInstance().getConnection().createStatement()) {
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                maxProjectClients.add(MaxProjectClient.builder().ID(rs.getInt("ID"))
+                maxProjectClients.add(MaxProjectClient.builder().id(rs.getInt("ID"))
                         .name(rs.getString("NAME"))
                         .projectCount(rs.getInt("PROJECT_COUNT")).build());
+                st.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -87,6 +90,7 @@ public class DatabaseQueryService {
                 yoWorkers.add(YOWorker.builder().type(rs.getString("TYPE"))
                         .name(rs.getString("NAME"))
                         .birthday(LocalDate.parse(rs.getString("BIRTHDAY"))).build());
+                st.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -104,8 +108,9 @@ public class DatabaseQueryService {
         try (Statement st = Database.getInstance().getConnection().createStatement()) {
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                projectPrices.add(ProjectPrice.builder().ID(rs.getInt("ID"))
+                projectPrices.add(ProjectPrice.builder().id(rs.getInt("ID"))
                         .price(rs.getInt("PRICE")).build());
+                st.close();
             }
         } catch (SQLException e) {
             return null;

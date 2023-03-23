@@ -6,7 +6,7 @@ import lombok.ToString;
 @Builder
 @ToString
 public class MaxProjectClient {
-        private int ID;
+        private int id;
         private String name;
         private int projectCount;
 }

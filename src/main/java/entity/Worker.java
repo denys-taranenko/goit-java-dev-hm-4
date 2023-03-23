@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Builder
 @ToString
 public class Worker {
-    private int ID;
+    private int id;
     private String name;
     private LocalDate birthday;
     private String level;
