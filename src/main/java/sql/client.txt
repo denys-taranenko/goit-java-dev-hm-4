@@ -1,0 +1,5 @@
+('ABC Corp.'),
+('XYZ Inc.'),
+('Acme Corporation'),
+('Globex Industries'),
+('Initech');

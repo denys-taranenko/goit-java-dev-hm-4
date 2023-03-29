@@ -1,0 +1,10 @@
+('John Smith', '1990-01-01', 'Trainee', 800),
+('Mary Johnson', '1985-02-15', 'Junior', 1500),
+('David Lee', '1980-05-20', 'Middle', 3000),
+('Emily Wang', '1975-08-30', 'Senior', 7000),
+('Michael Chen', '1995-12-10', 'Trainee', 900),
+('Jennifer Kim', '1992-03-05', 'Junior', 1800),
+('Chris Davis', '1988-06-25', 'Middle', 3500),
+('Samantha Brown', '1983-09-17', 'Senior', 8000),
+('Daniel Lee', '1993-11-30', 'Trainee', 1000),
+('Jessica Park', '1991-04-20', 'Junior', 2000);
